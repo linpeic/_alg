@@ -9,7 +9,7 @@
 最小編輯距離: 4<br>
 
 
-* 加入自動測試 *
+** 加入自動測試 **
 ##### (base) PS D:\ccc\ccc114a_Algorithm\_alg\HW9_20251028> python mindistance.py
 恭喜！所有測試都通過了！(All tests passed)
 
