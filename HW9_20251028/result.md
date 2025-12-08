@@ -1,4 +1,4 @@
-測試1<br>
+**測試1**<br>
 (base) PS D:\ccc\ccc114a_Algorithm\_alg\HW9_20251028> python mindistance.py  
 字串 1: kitten<br>
 字串 2: sitting<br>
