@@ -1,20 +1,32 @@
-**測試1**<br> 
-字串 1: kitten<br>
-字串 2: sitting<br>
-最小編輯距離: 3<br>
+**執行結果1**<br> 
+```
+(base) PS D:\ccc\ccc114a_Algorithm\_alg\HW9_20251028> python mindistance.py  
+字串 1: kitten
+字串 2: sitting
+最小編輯距離: 3
+```
 
 **測試2**<br>
-字串 1: kitte<br>
-字串 2: sitting<br>
-最小編輯距離: 4<br>
+```
+(base) PS D:\ccc\ccc114a_Algorithm\_alg\HW9_20251028> python mindistance.py  
+字串 1: kitte
+字串 2: sitting
+最小編輯距離: 4
+```
 
 **測試3(加入自動測試)**<br>
+```
+(base) PS D:\ccc\ccc114a_Algorithm\_alg\HW9_20251028> python mindistance.py  
 恭喜！所有測試都通過了！(All tests passed)
+```
 
 **測試4**<br>
-字串 1: <br> 
-字串 2: sitting <br>
-最小編輯距離: 7 <br>
+```
+(base) PS D:\ccc\ccc114a_Algorithm\_alg\HW9_20251028> python mindistance.py  
+字串 1: 
+字串 2: sitting
+最小編輯距離: 7 
+```
 
 
 **說明**<br>
