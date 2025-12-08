@@ -3,11 +3,12 @@
 字串 2: sitting<br>
 最小編輯距離: 3<br>
 
+##### (base) PS D:\ccc\ccc114a_Algorithm\_alg\HW9_20251028> python mindistance.py
+字串 1: kitte<br>
 
-# (base) PS D:\ccc\ccc114a_Algorithm\_alg\HW9_20251028> python mindistance.py
-## 字串 1: kitte
-## 字串 2: sitting
-## 最小編輯距離: 4
+字串 2: sitting
+
+最小編輯距離: 4
 
 
 # 加入自動測試
