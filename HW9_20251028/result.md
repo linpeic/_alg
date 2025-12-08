@@ -14,11 +14,10 @@
 恭喜！所有測試都通過了！(All tests passed)
 
 
-# (base) PS D:\ccc\ccc114a_Algorithm\_alg\HW9_20251028> python mindistance.py
-## 字串 1: 
-## 字串 2: sitting
-## 最小編輯距離: 7
-# (base) PS D:\ccc\ccc114a_Algorithm\_alg\HW9_20251028>
+#### (base) PS D:\ccc\ccc114a_Algorithm\_alg\HW9_20251028> python mindistance.py
+字串 1: <br> 
+字串 2: sitting <br>
+最小編輯距離: 7 <br>
 
 ### 說明
 ## 這段程式碼主要應用於 NLP (自然語言處理) 領域：
