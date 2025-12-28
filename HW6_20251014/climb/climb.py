@@ -18,6 +18,7 @@ def MSE(a, x, y):
 	for i in range(len(x)):
 		total += (y[i]-predict(a,x[i]))**2
 	return total
+    #total沒有除len(x)，是因為爬山演算法只需關心那個方向更好，是否除不影響判斷
 
 #先換成下山演算法
 def hillClimbingdown(f, x, y, h=0.01,round=1000):

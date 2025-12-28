@@ -1,5 +1,5 @@
 
-def hillClimbing(f, x, y, h=0.01,round=50):
+def hillClimbingdown(f, x, y, h=0.01,round=50):
     loops=0
     while (True):
         loops=loops+1
@@ -22,4 +22,4 @@ def hillClimbing(f, x, y, h=0.01,round=50):
 def f(x, y):
     return -1 * ( x*x - 2*x + y*y + 2*y - 8 )
 
-hillClimbing(f, 0, 0)
+hillClimbingdown(f, 0, 0)

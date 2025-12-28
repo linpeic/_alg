@@ -4,8 +4,6 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 import platform
 
-
-
 featureset_name = ['A', 'B', 'C', 'D']
 X_np = np.array([
     [0.15, 0.43, 0.70, 0.38],
