@@ -150,7 +150,7 @@ if __name__ == "__main__":
     #非黑即白分類
     img[img>128] = 255 #淺色->全白
     img[img<=128] = 0#深色->全黑
-    m = np.asarray(img)
+    m = np.asarray(img) 
     m = cv2.cvtColor(m, cv2.COLOR_RGB2GRAY)
     m = m.astype(float) / 255.
     m = 1-cv2.dilate(1-m, np.ones((20,20)))
