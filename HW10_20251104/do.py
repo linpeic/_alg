@@ -6,6 +6,8 @@ n=4
 #蒙地卡羅積分：隨機把點分布 再將原本的盒子體積*在目標內的比例 就會是目標體積
 #參考資料：https://home.gamer.com.tw/creationDetail.php?sn=3981429
 #黎曼積分:把不規則的形狀 切成無數個規則的小方塊 然後把這些方塊加起來
+
+
 def monte_carlo(samples=1000000): #100000
     #length=2*center_to_long
     volume=(2*center_to_long)**n #算體積
