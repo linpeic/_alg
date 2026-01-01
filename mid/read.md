@@ -33,4 +33,4 @@
  結果
 
 ![rrt](https://github.com/linpeic/_alg/blob/main/mid/picture/RRT.png)
-![rrt](hhttps://github.com/linpeic/_alg/blob/main/mid/picture/RRT_T.png)
+![rrt](https://github.com/linpeic/_alg/blob/main/mid/picture/RRT_T.png)
