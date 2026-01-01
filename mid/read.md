@@ -3,15 +3,13 @@
  實作三個全域演算法 一個區域演算法 
 
  1.a_star
-
 [A*程式碼](https://github.com/linpeic/_alg/blob/main/mid/a_star.py)
 
 結果
 
 ![A*](https://github.com/linpeic/_alg/blob/main/mid/picture/A.png)
 ![A*](https://github.com/linpeic/_alg/blob/main/mid/picture/A_T.png)
- 2.dijkstra
-
+ 2.dijkstra <br>
  [Dijkstra程式碼](https://github.com/linpeic/_alg/blob/main/mid/dijkstra.py)
 
 結果
