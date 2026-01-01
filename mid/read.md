@@ -2,6 +2,11 @@
 ## 111210522 資工三　林沛欣
  實作三個全域演算法 一個區域演算法 
 
+參考老師上課講義(平滑化處理、偵測障礙物部分)<br>
+執行出來的結果遇到問題有訊問AI <br>
+[AI對話](https://gemini.google.com/app/dc5a4711d329b31a?hl=zh-TW)<br>
+其他演算法部分是自己寫的
+
  1.a_star<br>
 [A*程式碼](https://github.com/linpeic/_alg/blob/main/mid/a_star.py)<br>
 結果<br>
