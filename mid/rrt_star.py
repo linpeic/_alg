@@ -146,7 +146,7 @@ class PlannerRRTStar:
         return path
 if __name__ == "__main__":
     #讓電腦看懂地圖
-    img = cv2.flip(cv2.imread("D:/ccc/ccc114a_Algorithm/_alg/mid/maps/map_U.png"),0)
+    img = cv2.flip(cv2.imread("D:/ccc/ccc114a_Algorithm/_alg/mid/maps/map3.png"),0)
     #非黑即白分類
     img[img>128] = 255 #淺色->全白
     img[img<=128] = 0#深色->全黑
