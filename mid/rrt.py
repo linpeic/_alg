@@ -86,8 +86,9 @@ class PlannerRRT:
                     node = self.ntree[n]
                     cv2.line(img, (int(n[0]), int(n[1])), (int(node[0]), int(node[1])), (0,0.5,0.5), 1)
                 # Draw Image
-                img_ = cv2.flip(img,0)
-                cv2.imshow("rrt",img_)
+                # img_ = cv2.flip(img,0)
+                # cv2.imshow("rrt",img_)
+                cv2.imshow(f"rrt",img)
                 k = cv2.waitKey(1)
                 if k == 27:
                     break
@@ -106,7 +107,8 @@ class PlannerRRT:
 
 if __name__ == "__main__":
     #讓電腦看懂地圖
-    img = cv2.flip(cv2.imread("D:/ccc/ccc114a_Algorithm/_alg/mid/maps/map_U.png"),0)
+    #img = cv2.flip(cv2.imread("D:/ccc/ccc114a_Algorithm/_alg/mid/maps/map_U.png"),0)
+    img = cv2.imread("D:/ccc/ccc114a_Algorithm/_alg/mid/maps/map_U.png")
     #非黑即白分類
     img[img>128] = 255 #淺色->全白
     img[img<=128] = 0#深色->全黑
@@ -118,11 +120,48 @@ if __name__ == "__main__":
     img = img.astype(float)/255.
 
     
-    start=(100,200)
-    goal=(380,520)
+    start=None    
+    goal=None
+    dots =[]   # 記錄座標的空串列
+    click = 1
     
-    cv2.circle(img,(start[0],start[1]),5,(0,0,1),3)
-    cv2.circle(img,(goal[0],goal[1]),5,(0,1,0),3)
+    def set_start_goal(event,x,y,flags,param):
+        global click,start,goal
+        if event == 1:
+            # img_color=img[y,x]
+            
+            if click==1:
+                if m[y,x]<0.5:
+                    print("障礙物，請重新設定起點")
+                    return
+                dots.append([x, y])                          # 記錄座標
+                cv2.circle(img, (x, y), 10, (0,255,0), -1)   # 在點擊的位置，繪製圓形
+            
+                cv2.imshow('rrt', img)
+                click=click+1
+                start = tuple(dots[0])
+                print(start)
+                # print(click)
+            elif click ==2:
+                if m[y,x]<0.5:
+                    print("障礙物，請重新設定終點")
+                    return
+                dots.append([x, y])                          # 記錄座標
+                cv2.circle(img, (x, y), 10, (0,0,255), -1)   # 在點擊的位置，繪製圓形
+                
+                cv2.imshow('rrt', img)
+                click=click+1
+                # print(dots[1])
+                goal= tuple(dots[1])
+                print(goal)
+            # elif click>=3:
+            #     print("路徑規劃")
+    
+    cv2.imshow('rrt', img)
+    cv2.setMouseCallback('rrt',set_start_goal)
+    while start is None or goal is None:
+        cv2.imshow('rrt', img)
+        cv2.waitKey(1)
     
     planner = PlannerRRT(m,60)
     start_time=time.time()
@@ -142,6 +181,7 @@ if __name__ == "__main__":
         for i in range(len(path)-1):
             cv2.line(img, utils.pos_int(path[i]), utils.pos_int(path[i+1]), (1,0,0), 2)
     
-    img_ = cv2.flip(img,0)
-    cv2.imshow(f"rrt",img_)
+    # img_ = cv2.flip(img,0)
+    # cv2.imshow(f"rrt",img_)
+    cv2.imshow(f"rrt",img)
     k = cv2.waitKey(0)
