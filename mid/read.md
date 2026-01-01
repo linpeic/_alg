@@ -4,6 +4,7 @@
 
 參考老師上課講義(平滑化處理、偵測障礙物部分)<br>
 執行出來的結果遇到問題有訊問AI <br>
+[滑鼠](https://steam.oxxostudio.tw/category/python/ai/opencv-mouseevent.html#google_vignette)<br>
 [AI對話](https://gemini.google.com/app/dc5a4711d329b31a?hl=zh-TW)<br>
 其他演算法部分是自己寫的
 
