@@ -43,8 +43,8 @@ def simulated_annealing(X, y, max_iter=1000, T_init=1.0, T_low=0.99, step_size=0
         mse_old=MSE(best, X, y)
         mse_new=MSE(best_new, X, y)
         mse_differ= mse_new-mse_old
-        # mse_differ < 0 → 解較好（MSE 更小）
-        # mse_differ > 0 → 解較差
+        # mse_differ < 0 → （下坡）解較好（MSE 更小）
+        # mse_differ > 0 → （上坡）解較差
 
         if mse_differ<0 or np.random.rand() < np.exp(-mse_differ/ T):
             #溫度 T 高時，差解容易被接受 → 幫助探索全局最佳、溫度 T 低時，只接受更好的解 → 收斂

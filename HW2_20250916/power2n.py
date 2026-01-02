@@ -19,7 +19,7 @@ def power2n4(n):
     # power2n(n-1)+power2n(n-1) 
 print("方法三",power2n4(n))
 
-# 方法 2a：用遞迴
+# 方法 2a：用遞迴(加法)
 def power2n2(n):
     if n==0:
         return 1
@@ -28,7 +28,7 @@ def power2n2(n):
     return power2n2(n-1) + power2n2(n-1)
     # power2n(n-1)+power2n(n-1)
 print("方法2a",power2n2(n))
-# 方法2b：用遞迴
+# 方法2b：用遞迴(乘法)
 def power2n3(n):
     if n==0:
         return 1

@@ -15,6 +15,7 @@ X_np = np.array([
 
 y = np.array([1.9, 3.1, 3.9, 5.0, 6.2], dtype=np.float32)
 X_data = pd.DataFrame(X_np, columns=featureset_name)
+#原本的公式 1-(RSS/TSS) RSS:模型預測值和真實值差的平方總和 TSS:觀察值和平均值差的平方總和(表示原本資料的變異量)
 #https://medium.com/qiubingcheng/%E5%9B%9E%E6%AD%B8%E5%88%86%E6%9E%90-regression-analysis-%E7%9A%84r%E5%B9%B3%E6%96%B9-r-squared-%E8%88%87%E8%AA%BF%E6%95%B4%E5%BE%8Cr%E5%B9%B3%E6%96%B9-adjusted-r-squared-f38ad733bc4e
 #因為會有過度擬合的狀況發生，就是加入沒有用的特徵，也會使數值變大
 #因此使用調整過後的R平方，他考慮了納入的特徵數量
@@ -58,17 +59,19 @@ def forward(featureset_name, X, y):
             temp_name=select_name+[name]
             temp_score=score_adj_r2(temp_name, X, y)
             score_list.append((temp_score,name))
+        print("分數",score_list)
 
-        score_list.sort(reverse=True) 
-        tuple_score,tuple_name=score_list[0]
+        score_list.sort(reverse=True) #大到小排序
+        tuple_score,tuple_name=score_list[0] #最高分的
         
         if tuple_score>best_score:
             select_name.append(tuple_name)
             choosing_name.remove(tuple_name)
             best_score = tuple_score
+            
         else:
             break
-            
+        print("select:",select_name)    
     return select_name, best_score
 
 

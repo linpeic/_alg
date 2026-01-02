@@ -19,11 +19,11 @@ def monte_carlo(samples=1000000): #100000
     dist_sq=np.sum(points**2, axis=1)
     inside=np.sum(dist_sq<=1.0)
     
-    return volume*inside/samples #體積 * (裡面 / 全部)
+    return volume*inside/samples #體積*(裡面/全部)
 
 def riemann(steps=20):
 
-    d_long=(2*center_to_long)/steps#美小格的邊長
+    d_long=(2*center_to_long)/steps#每小格的邊長
     dV= d_long**n  # 每個小格子的體積
     args = [0.0] * n  #[0.0, 0.0, 0.0, 0.0]
     def recursive_grid(dim_index):

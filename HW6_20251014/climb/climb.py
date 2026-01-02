@@ -5,7 +5,7 @@ import numpy as np
 # x = np.array([0, 1, 2, 3, 4], dtype=np.float32)
 # y = np.array([2, 3, 4, 5, 6], dtype=np.float32)
 
-#爬山演算法改成下山演算法-->在進行線性回歸
+#爬山演算法改成下山演算法-->再進行線性回歸
 
 x = np.array([0, 1, 2, 3, 4], dtype=np.float32)
 y = np.array([1.9, 3.1, 3.9, 5.0, 6.2], dtype=np.float32)
@@ -21,6 +21,7 @@ def MSE(a, x, y):
     #total沒有除len(x)，是因為爬山演算法只需關心那個方向更好，是否除不影響判斷
 
 #先換成下山演算法
+#哪個方向讓損失（MSE）降低，就往那個方向走 如果四個方向都沒有讓損失函數降低 就代表到局部最低點
 def hillClimbingdown(f, x, y, h=0.01,round=1000):
     loops=0
     while (True):

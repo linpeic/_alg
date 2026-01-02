@@ -64,7 +64,7 @@ class PlannerAStar:
             
             # min_cost=float('inf')
             # now_node=None
-            #找成本最小的點
+            #找成本最小的點 小到大排序
             min_cost, now_node = heapq.heappop(self.queue)
             self.count=self.count+1
             # for cost,min_node in self.queue:
@@ -82,7 +82,7 @@ class PlannerAStar:
                 temp_g =self.g[now_node] +utils.distance(now_node,round)
                 if round not in self.g or temp_g<self.g[round]:
                         self.g[round]=temp_g
-                        self.h[round] = utils.distance(round, goal)#如果這個點之前沒有找過 需要預估一夏 他到終點的值
+                        self.h[round] = utils.distance(round, goal)#如果這個點之前沒有找過 需要預估一下 他到終點的值
                         #self.h[round]=abs(round[0]-goal[0])+abs(round[1]-goal[1])
                         f =temp_g +self.h[round]
                         #self.queue.append((f, round))
