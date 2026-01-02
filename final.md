@@ -28,7 +28,7 @@ GPT、Gemini協助畫圖<br>
 實作狼，羊，甘藍菜過河問題
 
 ### 習題 8 : 請說明 C(n,k) 的查表版和動態規劃版之異同
-[HW](https://gemini.google.com/app/438428d403d25f2b?hl=zh-TW)
+[HW](https://gemini.google.com/app/438428d403d25f2b?hl=zh-TW)<br>
 CnkDynamic.py 是 「不留歷史紀錄」 的實作，優點是不佔用長期記憶體，缺點是重複計算浪費時間。<br>
 CnkRLookup.py是 「經驗累積」 的實作（Cache），優點是越算越快（因為表格越來越滿），缺點是長期佔用記憶體。<br>
 
