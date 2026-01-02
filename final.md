@@ -45,7 +45,8 @@ CnkRLookup.py是 「經驗累積」 的實作（Cache），優點是越算越快
 
 ### 習題 12 : 請用梯度下降法之類的優化算法，驗證 cross_entropy(p, q) 的最低點是 q=p
 [HW](https://github.com/linpeic/_alg/blob/main/HW12/q_fire.py)<br>
-使用模擬退火演算法
+使用模擬退火演算法<br>
+[遇到問題詢問AI](https://gemini.google.com/app/74a8e57d7cad5cdd?hl=zh-TW)
 
 
 
