@@ -82,9 +82,8 @@ class PlannerAStar:
                 temp_g =self.g[now_node] +utils.distance(now_node,round)
                 if round not in self.g or temp_g<self.g[round]:
                         self.g[round]=temp_g
-                        self.h[round] = utils.distance(round, goal)
+                        self.h[round] = utils.distance(round, goal)#如果這個點之前沒有找過 需要預估一夏 他到終點的值
                         #self.h[round]=abs(round[0]-goal[0])+abs(round[1]-goal[1])
-                        #如果這個點之前沒有找過 需要預估一夏 他到終點的值
                         f =temp_g +self.h[round]
                         #self.queue.append((f, round))
                         heapq.heappush(self.queue, (f, round))
@@ -102,38 +101,6 @@ class PlannerAStar:
         if path[-1] != goal:
             path.append(goal)
         return path
-# img = cv2.imread("D:/ccc/ccc114a_Algorithm/_alg/mid/maps/map_U.png")
-# start=None    
-# goal=None
-# dots =[]   # 記錄座標的空串列
-# click = 1
-    
-# def set_start_goal(event,x,y,flags,param):
-#     global click,start,goal,dots
-#     if event == 1:
-#         if click==1:
-#             dots.append([x, y])                          # 記錄座標
-#             cv2.circle(img, (x, y), 10, (0,255,0), -1)   # 在點擊的位置，繪製圓形
-        
-#             cv2.imshow('A*', img)
-#             click=click+1
-#             start = tuple(dots[0])
-#             print(start)
-#             # print(click)
-#         elif click ==2:
-#             dots.append([x, y])                          # 記錄座標
-#             cv2.circle(img, (x, y), 10, (0,0,255), -1)   # 在點擊的位置，繪製圓形
-                
-#             cv2.imshow('A*', img)
-#             click=click+1
-#             # print(dots[1])
-#             goal= tuple(dots[1])
-#             print(goal)
-#             # elif click>=3:
-#             #     print("路徑規劃")
-    
-# cv2.imshow('A*', img)
-# cv2.setMouseCallback('A*',set_start_goal)
 if __name__ == "__main__":
     #讓電腦看懂地圖
     #img = cv2.flip(cv2.imread("D:/ccc/ccc114a_Algorithm/_alg/mid/maps/map_U.png"),0)

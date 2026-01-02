@@ -100,13 +100,13 @@ class PlannerRRTStar:
                 # TODO: Re-Parent & Re-Wire
                 # near_nodes = self._near_nodes(new_node, extend_len)
                 near_nodes = self._near_nodes(new_node,self.search_radius)
-                #Re-Parent
+                #reparent:看周圍節點哪個作父節點成本最低 → 重新連接 new_node
                 for minnear_node in near_nodes:
                     cost = self.cost[minnear_node] +utils.distance(minnear_node,new_node)
                     if cost < self.cost[new_node] and not self._check_collision(minnear_node,new_node):
                         self.ntree[new_node] = minnear_node # 記錄新節點的父節點
                         self.cost[new_node] = cost #記錄它的成本
-                #Re-Wire
+                #rewire:看周圍節點是否通過 new_node 能降低成本 → 改變父節點
                 for minnear_node in near_nodes:
                     new_cost = self.cost[new_node] +utils.distance(minnear_node,new_node)
                     if new_cost < self.cost[minnear_node] and not self._check_collision(minnear_node,new_node):

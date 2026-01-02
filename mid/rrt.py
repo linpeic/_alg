@@ -12,7 +12,7 @@ class PlannerRRT:
         #20
         self.map=m
         self.extend_len = extend_len
-
+    #決定樹的生長方向
     def _random_node(self, goal, shape):
         r = np.random.choice(2,1,p=[0.5,0.5])
         if r==1:
@@ -40,7 +40,7 @@ class PlannerRRT:
             if self.map[int(pts[1]),int(pts[0])]<0.5:
                 return True
         return False
-    #途中綠色的分支
+    #長出綠色的分支 是朝著隨機取樣的點的方向延伸 產生新的節點
     def _steer(self, from_node, to_node, extend_len):
         vect = np.array(to_node) - np.array(from_node)
         v_len = np.hypot(vect[0], vect[1])
@@ -58,16 +58,17 @@ class PlannerRRT:
         if extend_len is None:
             extend_len = self.extend_len
         self.ntree = {} #新節點=父節點，儲存：(key: 節點, value: 父節點)
-        self.ntree[start] = None#設定起點的父節點為none(根節點)
+        self.ntree[start] = None#設定起點的父節點為none
         self.cost = {} #儲存每個節點得成本
         self.cost[start] = 0 #起點成本為0
         goal_node = None #goal的前一個點
         self.count=1
         for it in range(10000):
             print("\r", it, len(self.ntree), end="")
-            samp_node = self._random_node(goal, self.map.shape)
+            samp_node = self._random_node(goal, self.map.shape)#決定生長方向
             near_node = self._nearest_node(samp_node)#找最近的點
             new_node, cost = self._steer(near_node, samp_node, extend_len) #找到的那個點去做延伸
+            
             if new_node is not False:
                 self.ntree[new_node] = near_node
                 self.cost[new_node] = cost + self.cost[near_node]
